@@ -177,8 +177,12 @@
       font-size: 0.9rem;
       color: var(--text-light);
     }
-    .site-footer a { color: var(--text-light); }
-    .site-footer a:hover { color: var(--secondary); }
+    .site-footer a {
+      color: var(--secondary);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .site-footer a:hover { color: var(--accent); }
 
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
