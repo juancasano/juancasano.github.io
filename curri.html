@@ -4,8 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Currículum Juan Manuel Casanova</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+        }
+
+        .cv-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 30%;
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            color: white;
+            padding: 30px;
+        }
+
+        .main-content { width: 70%; background-color: white; padding: 0 20px; }
+
+        .profile { text-align: center; margin-bottom: 30px; }
+        .profile img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid var(--secondary-color); margin-bottom: 15px; }
+        .profile h1 { margin: 0; font-size: 24px; color: white; }
+        .profile h2 { margin: 5px 0 0; font-size: 16px; font-weight: normal; color: var(--light-color); }
+
+        h1 { font-size: 20px; text-transform: uppercase; margin: 25px 0 10px; color: var(--secondary-color); }
+        h2 { font-size: 18px; margin: 15px 0 5px; color: var(--dark-color); }
+        h3 { font-size: 16px; margin: 10px 0 5px; color: var(--text-light); font-weight: normal; }
+
+        hr { border: none; height: 2px; background-color: var(--secondary-color); margin: 10px 0 15px; }
+        .sidebar hr { background-color: var(--light-color); }
+
+        .bulletless { list-style: none; padding: 0; }
+        .bulletless li { margin-bottom: 10px; display: flex; align-items: flex-start; }
+        .bulletless i { margin-right: 10px; width: 20px; text-align: center; color: var(--secondary-color); flex-shrink: 0; line-height: 1.4; }
+        .sidebar .bulletless i { color: var(--light-color); }
+
+        .hint { color: var(--text-light); font-style: italic; margin: 5px 0; font-size: 14px; }
+
+        ul { padding-left: 20px; }
+        ul li { margin-bottom: 8px; }
+
+        .section { margin-bottom: 30px; }
+        .experience, .education { margin-bottom: 25px; }
+
+        .main-header {
+            text-align: center;
+            padding: 30px 40px;
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            color: white;
+            margin: 20px 0 30px 0;
+            border-radius: 10px;
+        }
+
+        .main-header h1 { color: white; margin: 0; font-size: 28px; text-transform: none; }
+        .main-header h2 { color: var(--light-color); margin: 5px 0 0; font-size: 18px; font-weight: normal; }
+
+        .content-wrapper { padding-bottom: 40px; }
+
+        .project-card { background-color: #DBEBFA; padding: 15px; border-radius: 5px; margin-bottom: 15px; border-left: 3px solid var(--secondary-color); }
+
+        .footer-note { text-align: center; padding: 20px; color: var(--text-light); font-style: italic; font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .cv-container { flex-direction: column; gap: 0; }
+            .sidebar, .main-content { width: 100%; }
+            .main-header { padding: 20px; margin: 0 0 20px 0; }
+        }
+    </style>
 </head>
 <body>
     <div class="cv-container">
@@ -22,7 +109,6 @@
                 <ul class="bulletless">
                     <li><i class="fa-solid fa-envelope"></i> juancasano83@gmail.com</li>
                     <li><i class="fa-solid fa-phone"></i> 663 658 421</li>
-                    <li><i class="fa-solid fa-globe"></i> camiglobo.com</li>
                     <li><i class="fa-brands fa-github"></i> github.com/juancasano</li>
                     <li><i class="fa-solid fa-location-dot"></i> Barcelona, España</li>
                 </ul>
@@ -59,7 +145,6 @@
             </div>
 
             <div class="content-wrapper">
-
                 <div class="section">
                     <h1>PERFIL PROFESIONAL</h1>
                     <hr>
@@ -113,11 +198,10 @@
                     <hr>
                     <p>Más de 20 años de trayectoria laboral en diversos sectores (servicios, logística, comercio y actividad autónoma), aportando responsabilidad, autonomía y capacidad de adaptación. Actualmente en proceso de reconversión profesional hacia el desarrollo web.</p>
                 </div>
-
             </div>
         </div>
     </div>
-    <div style="text-align:center; padding: 20px; color: #7f8c8d; font-style: italic; font-size: 14px;">
+    <div class="footer-note">
         Proyecto en producción: camiglobo.com · GitHub disponible bajo solicitud
     </div>
 </body>
