@@ -45,18 +45,21 @@
     a:hover { color: var(--accent); text-decoration: underline; }
 
     .site-header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(56, 189, 248, 0.55) 100%),
+        url('assets/istockphoto-1316334212-612x612.jpg') center / cover no-repeat;
       color: white;
       padding: 80px 20px 60px;
       text-align: center;
       animation: fadeIn 0.8s ease-in-out;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     }
 
-    .site-header h1 { font-size: 2.5rem; margin-bottom: 8px; font-weight: 600; }
-    .site-header .tagline { font-size: 1.15rem; font-weight: 300; opacity: 0.9; margin-bottom: 6px; }
-    .contact-bar { font-size: 0.95rem; opacity: 0.85; margin-top: 14px; }
+    .site-header h1 { font-size: 2.5rem; margin-bottom: 8px; font-weight: 700; }
+    .site-header .tagline { font-size: 1.15rem; font-weight: 400; opacity: 0.95; margin-bottom: 6px; }
+    .contact-bar { font-size: 0.95rem; opacity: 0.95; margin-top: 14px; }
     .contact-bar a { color: white; text-decoration: underline; }
-    .contact-bar span { margin: 0 6px; opacity: 0.6; }
+    .contact-bar span { margin: 0 6px; opacity: 0.7; }
 
     .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
