@@ -119,10 +119,19 @@
       display: block;
       overflow: hidden;
       border-radius: 6px;
-      margin: 12px 0 14px;
+      margin: 12px 0 0;
     }
     .project-image-link .project-image { margin: 0; transition: transform 0.4s ease; }
     .project-image-link:hover .project-image { transform: scale(1.02); }
+
+    .project-figure { margin: 0 0 18px; }
+    .project-caption {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin: 8px 4px 0;
+      line-height: 1.5;
+    }
+    .project-caption strong { color: var(--primary); }
 
     .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
@@ -230,15 +239,26 @@
       <article class="card">
         <h3><i class="fa-solid fa-shirt" aria-hidden="true"></i> Camiglobo Barcelona — E-commerce de Camisetas Personalizadas</h3>
         <p class="hint">2025 – Actualidad · <a href="https://camiglobo.com" target="_blank" rel="noopener">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
-        <a href="https://camiglobo.com" target="_blank" rel="noopener" class="project-image-link" aria-label="Visitar camiglobo.com">
-          <img class="project-image" src="assets/camiglobo.png" alt="Captura de la home de camiglobo.com mostrando el e-commerce de camisetas personalizadas" loading="lazy">
-        </a>
-        <a href="https://camiglobo.com" target="_blank" rel="noopener" class="project-image-link" aria-label="Ver catálogo de productos en camiglobo.com">
-          <img class="project-image" src="assets/camiglobo-productos.png" alt="Catálogo de productos de camiglobo.com: camisetas y sudaderas con diseños de anime, manga y cultura pop" loading="lazy">
-        </a>
-        <a href="https://camiglobo.com" target="_blank" rel="noopener" class="project-image-link" aria-label="Probar el personalizador online de camiglobo.com">
-          <img class="project-image" src="assets/camiglobo-personalizador.png" alt="Personalizador online de camiglobo.com: editor con selector de prenda, paleta de colores, controles de diseño y previsualización en tiempo real" loading="lazy">
-        </a>
+        <figure class="project-figure">
+          <a href="https://camiglobo.com" target="_blank" rel="noopener" class="project-image-link" aria-label="Visitar camiglobo.com">
+            <img class="project-image" src="assets/camiglobo.png" alt="Captura de la home de camiglobo.com" loading="lazy">
+          </a>
+          <figcaption class="project-caption"><strong>Home</strong> — diseño responsive con hero principal y navegación clara hacia tienda y personalizador.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <a href="https://camiglobo.com" target="_blank" rel="noopener" class="project-image-link" aria-label="Ver catálogo de productos en camiglobo.com">
+            <img class="project-image" src="assets/camiglobo-productos.png" alt="Catálogo de productos: camisetas y sudaderas con diseños de anime y cultura pop" loading="lazy">
+          </a>
+          <figcaption class="project-caption"><strong>Catálogo de productos</strong> — más de 100 referencias activas en producción con grid responsive, ordenadas dinámicamente desde la base de datos.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <a href="https://camiglobo.com" target="_blank" rel="noopener" class="project-image-link" aria-label="Probar el personalizador online de camiglobo.com">
+            <img class="project-image" src="assets/camiglobo-personalizador.png" alt="Personalizador online con editor de prenda, paletas de colores y controles de diseño" loading="lazy">
+          </a>
+          <figcaption class="project-caption"><strong>Personalizador online</strong> — editor interactivo con selector de prenda, paletas de color, gradientes, subida de imagen, texto y previsualización en tiempo real (delante / detrás).</figcaption>
+        </figure>
         <ul>
           <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries</li>
           <li>E-commerce con más de 100 productos activos en producción</li>
