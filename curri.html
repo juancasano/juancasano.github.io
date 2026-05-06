@@ -158,6 +158,7 @@
 
         .print-contact { display: none; }
         .print-summary { display: none; }
+        .print-photo { display: none; }
         .content-wrapper { padding-bottom: 40px; }
 
         .footer-note {
@@ -192,12 +193,28 @@
             .main-content { width: 100%; padding: 0; }
 
             .main-header {
-                padding: 16px 28px;
+                padding: 14px 28px 14px 110px;
                 margin: 0 0 12px;
                 border-radius: 0;
+                position: relative;
+                text-align: left;
+                min-height: 95px;
             }
-            .main-header h1 { font-size: 22px; margin-bottom: 4px; }
-            .main-header .subtitle { font-size: 13px; margin: 0 0 8px; }
+            .main-header h1 { font-size: 20px; margin-bottom: 3px; }
+            .main-header .subtitle { font-size: 12px; margin: 0 0 6px; }
+
+            .print-photo {
+                display: block;
+                position: absolute;
+                left: 22px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 72px;
+                height: 72px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid rgba(255,255,255,0.9);
+            }
 
             .print-contact {
                 display: block;
@@ -289,6 +306,7 @@
 
         <div class="main-content">
             <header class="main-header">
+                <img class="print-photo" src="assets/profile.jpg" alt="" aria-hidden="true">
                 <h1>Juan Manuel Casanova Lacasa</h1>
                 <p class="subtitle">Desarrollador Web Full Stack | Frontend &amp; Backend</p>
                 <p class="print-contact">
