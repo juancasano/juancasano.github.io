@@ -34,7 +34,9 @@
     }
 
     header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; font-weight: 300; }
+    header p { font-size: 1.2rem; font-weight: 300; margin-bottom: 6px; }
+    header .contact-bar { font-size: 0.95rem; opacity: 0.85; margin-top: 12px; }
+    header .contact-bar a { color: white; text-decoration: underline; }
 
     .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
@@ -55,6 +57,19 @@
       padding-bottom: 10px;
     }
 
+    .section h3 {
+      font-size: 1.1rem;
+      margin: 15px 0 5px;
+      color: var(--primary);
+    }
+
+    .hint {
+      color: var(--text-light);
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
     .project-card {
       background-color: #e0f2fe;
       border-left: 5px solid var(--secondary);
@@ -66,9 +81,20 @@
 
     .project-card:hover { transform: translateY(-5px); }
 
-    .project-card h3 { margin-bottom: 10px; font-size: 1.25rem; color: var(--primary); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
 
-    .tech-list { font-weight: bold; color: var(--secondary); }
+    .skill-item {
+      background: #f0f9ff;
+      border-left: 3px solid var(--secondary);
+      padding: 10px 14px;
+      border-radius: 6px;
+    }
+
+    .skill-item strong { color: var(--primary); display: block; margin-bottom: 2px; }
 
     .btn {
       display: inline-block;
@@ -97,59 +123,91 @@
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
       .section { padding: 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1><i class="fas fa-user-astronaut"></i> Juan Manuel Casanova Lacasa</h1>
-    <p>Desarrollador Web Junior | Especialista en eCommerce y Productos Personalizados</p>
+    <h1><i class="fas fa-code"></i> Juan Manuel Casanova Lacasa</h1>
+    <p>Desarrollador Web Full Stack · Frontend & Backend</p>
+    <div class="contact-bar">
+      <i class="fas fa-phone"></i> 663 658 421 &nbsp;·&nbsp;
+      <i class="fas fa-envelope"></i> juancasano83@gmail.com &nbsp;·&nbsp;
+      <i class="fas fa-location-dot"></i> Barcelona &nbsp;·&nbsp;
+      <i class="fas fa-globe"></i> <a href="https://camiglobo.com" target="_blank">camiglobo.com</a>
+    </div>
   </header>
 
   <div class="container">
 
     <div class="section">
-      <h2><i class="fas fa-info-circle"></i> Sobre mí</h2>
-      <p>Recién graduado del curso de <strong>Confección y Publicación de Páginas Web</strong>. He desarrollado una tienda completa de camisetas y productos personalizados con funcionalidades reales: registro de usuarios, base de datos MySQL, carga dinámica de productos vía JSON y panel de administración. Mi enfoque es crear soluciones funcionales, escalables y con buena experiencia de usuario.</p>
-      <a href="curri.html" class="btn"><i class="fas fa-file-alt"></i> Ver mi currículum</a>
+      <h2><i class="fas fa-user"></i> Perfil profesional</h2>
+      <p>Desarrollador web con formación técnica oficial (SOC/SEPE) y proyecto real en producción: e-commerce con más de 100 productos activos desplegado en Hostinger con pasarela de pago PayPal, diseño responsive, SEO implementado y panel de administración propio. Certificado en Confección y Publicación de Páginas Web (IFCD0110, 560h con prácticas) y actualmente cursando Front End Web Developer Nivel 4 (IFCD65). Más de 20 años de vida laboral activa aportando responsabilidad y autonomía. Busco incorporarme a un equipo técnico donde seguir creciendo como desarrollador.</p>
+      <a href="curri.html" class="btn" style="margin-top:15px;"><i class="fas fa-file-alt"></i> Ver currículum completo</a>
     </div>
 
     <div class="section">
       <h2><i class="fas fa-star"></i> Proyecto destacado</h2>
-
       <div class="project-card">
-        <h3><i class="fas fa-tshirt"></i> Tienda Online de Camisetas Personalizadas</h3>
-        <p>Desarrollo completo de una tienda funcional con catálogo de productos, registro de usuarios, panel de administración y carga dinámica de productos desde un archivo JSON.</p>
-        <p class="tech-list">Tecnologías: HTML, CSS, JavaScript, PHP, MySQL, JSON</p>
+        <h3><i class="fas fa-tshirt"></i> Camiglobo Barcelona — E-commerce de Camisetas Personalizadas</h3>
+        <p class="hint">2025 – Actualidad · <a href="https://camiglobo.com" target="_blank">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
         <ul>
-          <li>Sistema de registro y login de usuarios con contraseñas seguras (hashing).</li>
-          <li>Base de datos relacional para usuarios, productos y pedidos.</li>
-          <li>Panel de administración para cargar productos desde archivo JSON.</li>
-          <li>Diseño responsive y optimizado para móviles.</li>
-          <li>Formulario de contacto funcional con validación.</li>
+          <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries</li>
+          <li>E-commerce con más de 100 productos activos en producción</li>
+          <li>PHP, JavaScript ES6, HTML5, CSS3 y base de datos MySQL</li>
+          <li>Pasarela de pago PayPal + PHPMailer/SMTP + panel de administración propio</li>
+          <li>Personalizador online: subida de imágenes, texto y previsualización en tiempo real</li>
+          <li>SEO técnico: Sitemap XML, meta tags, robots.txt, Search Console y Analytics</li>
+          <li>Seguridad: HTTPS/SSL, .env, .htaccess, validación de formularios</li>
+          <li>Git + despliegue en servidor de producción</li>
         </ul>
-        <a href="https://camiglobo.xo.je" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Ver demo en vivo</a>
+        <a href="https://camiglobo.com" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Ver proyecto en vivo</a>
       </div>
     </div>
 
     <div class="section">
       <h2><i class="fas fa-tools"></i> Habilidades técnicas</h2>
-      <ul>
-        <li>HTML5, CSS3, JavaScript (básico-intermedio)</li>
-        <li>PHP y MySQL para backend y base de datos</li>
-        <li>Manejo de archivos JSON para configuración y carga de datos</li>
-        <li>Diseño responsive y experiencia de usuario (UX básica)</li>
-        <li>WordPress: instalación, personalización de temas y plugins</li>
-        <li>SEO técnico: etiquetas, sitemap, schema, Search Console</li>
-        <li>Git y GitHub para control de versiones</li>
+      <div class="skills-grid">
+        <div class="skill-item"><strong>Frontend</strong>HTML5, CSS3 (Responsive/Media Queries), JavaScript ES6+, Vue.js</div>
+        <div class="skill-item"><strong>Backend</strong>PHP, MySQL — e-commerce en producción</div>
+        <div class="skill-item"><strong>Herramientas</strong>Git, GitHub, PHPMailer, API PayPal, WordPress</div>
+        <div class="skill-item"><strong>SEO & Analytics</strong>Search Console, Google Analytics, Sitemap XML, meta tags</div>
+        <div class="skill-item"><strong>Seguridad</strong>HTTPS/SSL, .htaccess, .env, validación de formularios</div>
+        <div class="skill-item"><strong>Despliegue</strong>Hostinger, configuración de servidor, dominio y DNS</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Formación</h2>
+      <div class="project-card">
+        <h3>Front End Web Developer (IFCD65) — Nivel 4 <em>(en curso)</em></h3>
+        <p class="hint">2026 – Jul. 2026 · Pime Coneixement · Consorci per a la Formació Contínua de Catalunya</p>
+        <p>JavaScript ES6+, Vue.js, Git/GitHub — 240 horas de especialización frontend avanzado</p>
+      </div>
+      <div class="project-card">
+        <h3>Confección y Publicación de Páginas Web (IFCD0110) — Certificado Oficial</h3>
+        <p class="hint">Mayo – Dic. 2025 · 560 horas · Qualitat i Desenvolupupament Consultors, SL · SOC – Generalitat de Catalunya</p>
+        <p><strong>Calificación: Excelente en todos los módulos</strong></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-address-card"></i> Contacto</h2>
+      <ul style="list-style:none; padding:0;">
+        <li style="margin-bottom:8px;"><i class="fas fa-envelope" style="color:var(--secondary); width:20px;"></i> juancasano83@gmail.com</li>
+        <li style="margin-bottom:8px;"><i class="fas fa-phone" style="color:var(--secondary); width:20px;"></i> 663 658 421</li>
+        <li style="margin-bottom:8px;"><i class="fas fa-globe" style="color:var(--secondary); width:20px;"></i> <a href="https://camiglobo.com" target="_blank">camiglobo.com</a></li>
+        <li style="margin-bottom:8px;"><i class="fab fa-github" style="color:var(--secondary); width:20px;"></i> <a href="https://github.com/juancasano" target="_blank">github.com/juancasano</a></li>
+        <li><i class="fas fa-location-dot" style="color:var(--secondary); width:20px;"></i> Barcelona, España</li>
       </ul>
     </div>
 
   </div>
 
   <footer>
-    <p>&copy; 2025 Juan Manuel Casanova | Hecho con <i class="fas fa-heart" style="color: red;"></i> y código limpio</p>
+    <p>Proyecto en producción: <a href="https://camiglobo.com" target="_blank">camiglobo.com</a> · GitHub disponible bajo solicitud</p>
   </footer>
 
 </body>
