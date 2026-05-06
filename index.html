@@ -92,6 +92,24 @@
     .card ul { padding-left: 20px; margin-top: 8px; }
     .card ul li { margin-bottom: 5px; font-size: 0.95rem; }
 
+    .project-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 12px 0 14px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .project-image-link {
+      display: block;
+      overflow: hidden;
+      border-radius: 6px;
+      margin: 12px 0 14px;
+    }
+    .project-image-link .project-image { margin: 0; transition: transform 0.4s ease; }
+    .project-image-link:hover .project-image { transform: scale(1.02); }
+
     .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
     .skill-item {
