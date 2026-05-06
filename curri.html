@@ -178,8 +178,9 @@
 
         @media print {
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            body { font-size: 9.5px; line-height: 1.32; background: white; }
+            html, body { font-size: 9px; line-height: 1.32; background: white; margin: 0; padding: 0; }
 
+            /* Sidebar fijo que se repite en cada página del PDF */
             .cv-container {
                 display: block;
                 margin: 0;
@@ -189,74 +190,62 @@
                 max-width: 100%;
             }
 
-            .sidebar { display: none; }
-            .main-content { width: 100%; padding: 0; }
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 33%;
+                padding: 16px 14px;
+                background: var(--primary);
+            }
 
+            .main-content {
+                width: 67%;
+                margin-left: 33%;
+                padding: 0;
+            }
+
+            /* Sidebar interno compacto */
+            .profile { margin-bottom: 14px; }
+            .profile-photo { width: 95px; height: 95px; border-width: 3px; margin-bottom: 8px; }
+            .profile-name { font-size: 14px; }
+            .profile-role { font-size: 10px; margin-top: 3px; }
+
+            .sidebar-section { margin-bottom: 14px; }
+            .sidebar-title { font-size: 10px; margin-bottom: 5px; }
+            .sidebar hr { margin: 0 0 7px; }
+            .bulletless li { margin-bottom: 5px; font-size: 9px; line-height: 1.32; }
+            .bulletless i { margin-right: 6px; width: 13px; font-size: 9px; }
+
+            /* Main content */
             .main-header {
-                padding: 10px 24px 10px 100px;
-                margin: 0 0 8px;
-                border-radius: 0;
-                position: relative;
-                text-align: left;
-                min-height: 78px;
+                padding: 14px 20px;
+                margin: 12px 0 14px;
+                border-radius: 8px;
+                background: var(--primary);
             }
-            .main-header h1 { font-size: 18px; margin-bottom: 2px; }
-            .main-header .subtitle { font-size: 11px; margin: 0 0 4px; }
+            .main-header h1 { font-size: 17px; margin-bottom: 2px; }
+            .main-header .subtitle { font-size: 10.5px; margin: 0; color: #cbd5e1; }
 
-            .print-photo {
-                display: block;
-                position: absolute;
-                left: 18px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 2px solid rgba(255,255,255,0.9);
-            }
+            /* Ocultar elementos solo-PDF antiguos: ya no los necesitamos */
+            .print-photo { display: none; }
+            .print-contact { display: none; }
+            .print-summary { display: none !important; }
 
-            .print-contact {
-                display: block;
-                font-size: 9.5px;
-                opacity: 0.95;
-                margin-top: 4px;
-                color: white;
-            }
-            .print-contact i { margin-right: 4px; }
-
-            /* Bloque resumen (solo en PDF): habilidades + idiomas en 2 columnas */
-            .print-summary {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr;
-                gap: 6px 20px;
-                padding: 0 24px;
-                margin-bottom: 8px;
-                font-size: 9px;
-            }
-            .print-summary h3 {
-                font-size: 10px;
-                color: var(--secondary);
-                margin-bottom: 3px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            .print-summary ul { list-style: none; padding: 0; }
-            .print-summary ul li { margin-bottom: 1px; }
-
-            .content-wrapper { padding: 0 24px 8px; }
-            .section-title { font-size: 11px; margin: 6px 0 3px; page-break-after: avoid; break-after: avoid; }
-            .section-divider { margin: 0 0 4px; }
+            .content-wrapper { padding: 0 22px 12px; }
+            .section { margin-bottom: 9px; page-break-inside: avoid; break-inside: avoid; }
+            .section-title { font-size: 11px; margin: 8px 0 3px; page-break-after: avoid; break-after: avoid; }
+            .section-divider { margin: 0 0 5px; height: 2px; }
             .item-title { font-size: 10.5px; page-break-after: avoid; break-after: avoid; }
             .item-subtitle { font-size: 9px; }
             .hint { font-size: 8.5px; margin: 1px 0 3px; }
             ul.bullets { padding-left: 14px; }
-            ul.bullets li { margin-bottom: 1px; font-size: 9px; }
-            .section { margin-bottom: 6px; page-break-inside: avoid; break-inside: avoid; }
-            .experience, .education { margin-bottom: 5px; page-break-inside: avoid; break-inside: avoid; }
+            ul.bullets li { margin-bottom: 1.5px; font-size: 9px; }
+            .experience, .education { margin-bottom: 6px; page-break-inside: avoid; break-inside: avoid; }
             .footer-note { display: none; }
 
-            @page { size: A4; margin: 8mm 0; }
+            @page { size: A4; margin: 0; }
         }
     </style>
 </head>
@@ -350,7 +339,7 @@
                     <ul class="bullets" style="margin-top: 8px;">
                         <li><strong>E-commerce en producción:</strong> camiglobo.com — +100 productos, PayPal, panel de admin propio, SEO técnico</li>
                         <li><strong>Certificación oficial SOC/SEPE</strong> (IFCD0110, 560h) — calificación Excelente en todos los módulos</li>
-                        <li><strong>Stack actual:</strong> PHP, MySQL, JavaScript ES6+, HTML5, CSS3, Git</li>
+                        <li><strong>Stack actual:</strong> PHP, MySQL, JavaScript ES6+, HTML5, CSS3, Git, GitHub</li>
                         <li><strong>En formación:</strong> Front End Web Developer Nivel 4 — Vue.js, JS avanzado (240h, hasta julio 2026)</li>
                         <li>20 años de vida laboral aportando autonomía, responsabilidad y trato directo con cliente</li>
                     </ul>
