@@ -371,7 +371,7 @@
                             <li>Sistema de usuarios completo: registro, login (incluyendo Google OAuth), recuperación de contraseña y gestión de perfil</li>
                             <li>Panel de administración propio con gestión de productos, pedidos, clientes y biblioteca de recursos</li>
                             <li>SEO técnico: Sitemap XML, meta tags, robots.txt, Google Search Console y Google Analytics</li>
-                            <li>Seguridad: HTTPS/SSL, variables de entorno (.env), protección .htaccess y validación de formularios</li>
+                            <li>Seguridad multicapa: 18 capas implementadas — anti-SQLi (PDO preparadas), anti-CSRF (random_bytes + hash_equals), anti-XSS, BCRYPT, rate limiting, reCAPTCHA + honeypots, sesiones seguras (HttpOnly/Secure/SameSite), CSP, HSTS, audit log, transacciones atómicas y GDPR</li>
                             <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries</li>
                             <li>Control de versiones con Git/GitHub y despliegue en servidor de producción (Hostinger)</li>
                         </ul>
