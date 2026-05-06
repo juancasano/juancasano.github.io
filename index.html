@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio - Juan Manuel Casanova</title>
+  <meta name="description" content="Portafolio de Juan Manuel Casanova Lacasa, Desarrollador Web Full Stack en Barcelona. Proyecto real en producción: camiglobo.com.">
+  <title>Portafolio · Juan Manuel Casanova — Desarrollador Web Full Stack</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%BB</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     :root {
@@ -18,34 +20,58 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    a { color: var(--secondary); text-decoration: none; }
+    a:hover { color: var(--accent); text-decoration: underline; }
+
+    .site-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 80px 20px 60px;
       text-align: center;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; font-weight: 300; margin-bottom: 6px; }
-    header .contact-bar { font-size: 0.95rem; opacity: 0.85; margin-top: 12px; }
-    header .contact-bar a { color: white; text-decoration: underline; }
+    .site-header h1 { font-size: 2.5rem; margin-bottom: 8px; font-weight: 600; }
+    .site-header .tagline { font-size: 1.15rem; font-weight: 300; opacity: 0.9; margin-bottom: 6px; }
+    .contact-bar { font-size: 0.95rem; opacity: 0.85; margin-top: 14px; }
+    .contact-bar a { color: white; text-decoration: underline; }
+    .contact-bar span { margin: 0 6px; opacity: 0.6; }
 
     .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-    .section {
+    section.section {
       background: var(--card);
       padding: 30px;
       margin-bottom: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      animation: slideUp 0.6s ease-in-out;
+      animation: slideUp 0.6s ease-in-out both;
     }
 
-    .section h2 { color: var(--secondary); margin-bottom: 15px; font-size: 1.5rem; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
-    .section h3 { font-size: 1.1rem; margin: 15px 0 5px; color: var(--primary); }
+    section.section:nth-child(2) { animation-delay: 0.1s; }
+    section.section:nth-child(3) { animation-delay: 0.2s; }
+    section.section:nth-child(4) { animation-delay: 0.3s; }
+    section.section:nth-child(5) { animation-delay: 0.4s; }
+
+    section.section h2 {
+      color: var(--secondary);
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section.section h3 { font-size: 1.05rem; margin: 14px 0 5px; color: var(--primary); }
 
     .hint { color: var(--text-light); font-style: italic; font-size: 0.9rem; margin-bottom: 8px; }
 
@@ -54,72 +80,114 @@
       border-left: 5px solid var(--secondary);
       padding: 20px;
       border-radius: 8px;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover { transform: translateY(-5px); }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+    }
 
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .card ul { padding-left: 20px; margin-top: 8px; }
+    .card ul li { margin-bottom: 5px; font-size: 0.95rem; }
 
-    .skill-item { background: #f0f9ff; border-left: 3px solid var(--secondary); padding: 10px 14px; border-radius: 6px; }
-    .skill-item strong { color: var(--primary); display: block; margin-bottom: 2px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .skill-item {
+      background: #f0f9ff;
+      border-left: 3px solid var(--secondary);
+      padding: 12px 14px;
+      border-radius: 6px;
+    }
+    .skill-item strong { color: var(--primary); display: block; margin-bottom: 3px; font-size: 0.9rem; }
+    .skill-item span { font-size: 0.9rem; color: var(--text-light); }
+
+    .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 
     .btn {
-      display: inline-block;
-      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       padding: 10px 18px;
       background-color: var(--secondary);
       color: white;
-      text-decoration: none;
       border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.25s ease, transform 0.2s ease;
+      text-decoration: none;
     }
-
-    .btn:hover { background-color: var(--accent); }
+    .btn:hover { background-color: var(--accent); color: white; transform: translateY(-2px); text-decoration: none; }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--secondary);
+      border: 2px solid var(--secondary);
+    }
+    .btn-outline:hover { background-color: var(--secondary); color: white; }
 
     .contact-list { list-style: none; padding: 0; }
-    .contact-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-    .contact-list i { color: var(--secondary); width: 20px; text-align: center; }
+    .contact-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; }
+    .contact-list i { color: var(--secondary); width: 20px; text-align: center; font-size: 1.1rem; }
 
-    footer { text-align: center; padding: 30px 10px; font-size: 0.9rem; color: var(--text-light); }
+    .site-footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .site-footer a { color: var(--text-light); }
+    .site-footer a:hover { color: var(--secondary); }
 
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .section { padding: 20px; }
+      .site-header { padding: 50px 20px 40px; }
+      .site-header h1 { font-size: 2rem; }
+      .container { margin: 24px auto; }
+      section.section { padding: 20px; }
       .skills-grid { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; }
+      .btn { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1><i class="fas fa-code"></i> Juan Manuel Casanova Lacasa</h1>
-    <p>Desarrollador Web Full Stack · Frontend & Backend</p>
-    <div class="contact-bar">
-      <i class="fas fa-phone"></i> 663 658 421 &nbsp;·&nbsp;
-      <i class="fas fa-envelope"></i> juancasano83@gmail.com &nbsp;·&nbsp;
-      <i class="fas fa-location-dot"></i> Barcelona
-    </div>
+  <header class="site-header">
+    <h1>Juan Manuel Casanova Lacasa</h1>
+    <p class="tagline">Desarrollador Web Full Stack · Frontend &amp; Backend</p>
+    <p class="contact-bar">
+      <i class="fa-solid fa-phone" aria-hidden="true"></i> 663 658 421
+      <span>·</span>
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      <a href="mailto:juancasano83@gmail.com">juancasano83@gmail.com</a>
+      <span>·</span>
+      <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Barcelona
+    </p>
   </header>
 
-  <div class="container">
+  <main class="container">
 
-    <div class="section">
-      <h2><i class="fas fa-user"></i> Perfil profesional</h2>
-      <p>Desarrollador web con formación técnica oficial (SOC/SEPE) y proyecto real en producción: e-commerce con más de 100 productos activos desplegado en Hostinger con pasarela de pago PayPal, diseño responsive, SEO implementado y panel de administración propio. Certificado en Confección y Publicación de Páginas Web (IFCD0110, 560h con prácticas) y actualmente cursando Front End Web Developer Nivel 4 (IFCD65). Más de 20 años de vida laboral activa aportando responsabilidad y autonomía. Busco incorporarme a un equipo técnico donde seguir creciendo como desarrollador.</p>
-      <a href="curri.html" class="btn" style="margin-top:15px;"><i class="fas fa-file-alt"></i> Ver currículum completo</a>
-    </div>
+    <section class="section" id="perfil">
+      <h2><i class="fa-solid fa-user" aria-hidden="true"></i> Perfil profesional</h2>
+      <p>Desarrollador web con formación técnica oficial (SOC/SEPE) y proyecto real en producción: e-commerce con más de 100 productos activos desplegado en Hostinger con pasarela de pago PayPal, diseño responsive, SEO implementado y panel de administración propio. Certificado en Confección y Publicación de Páginas Web (IFCD0110, 560h con prácticas) y actualmente cursando Front End Web Developer Nivel 4 (IFCD65). Busco incorporarme a un equipo técnico donde seguir creciendo como desarrollador.</p>
+      <div class="btn-group">
+        <a href="curri.html" class="btn"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Ver currículum</a>
+        <a href="Currículum Juan Manuel Casanova.pdf" class="btn btn-outline" download><i class="fa-solid fa-download" aria-hidden="true"></i> Descargar CV (PDF)</a>
+      </div>
+    </section>
 
-    <div class="section">
-      <h2><i class="fas fa-star"></i> Proyecto destacado</h2>
-      <div class="card">
-        <h3><i class="fas fa-tshirt"></i> Camiglobo Barcelona — E-commerce de Camisetas Personalizadas</h3>
-        <p class="hint">2025 – Actualidad · <a href="https://camiglobo.com" target="_blank">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
+    <section class="section" id="proyectos">
+      <h2><i class="fa-solid fa-star" aria-hidden="true"></i> Proyecto destacado</h2>
+      <article class="card">
+        <h3><i class="fa-solid fa-shirt" aria-hidden="true"></i> Camiglobo Barcelona — E-commerce de Camisetas Personalizadas</h3>
+        <p class="hint">2025 – Actualidad · <a href="https://camiglobo.com" target="_blank" rel="noopener">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
         <ul>
           <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries</li>
           <li>E-commerce con más de 100 productos activos en producción</li>
@@ -130,50 +198,84 @@
           <li>Seguridad: HTTPS/SSL, .env, .htaccess, validación de formularios</li>
           <li>Git + despliegue en servidor de producción</li>
         </ul>
-        <a href="https://camiglobo.com" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Ver proyecto en vivo</a>
-      </div>
-    </div>
+        <div class="btn-group">
+          <a href="https://camiglobo.com" target="_blank" rel="noopener" class="btn">
+            <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Ver proyecto en vivo
+          </a>
+        </div>
+      </article>
+    </section>
 
-    <div class="section">
-      <h2><i class="fas fa-tools"></i> Habilidades técnicas</h2>
+    <section class="section" id="habilidades">
+      <h2><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Habilidades técnicas</h2>
       <div class="skills-grid">
-        <div class="skill-item"><strong>Frontend</strong>HTML5, CSS3 (Responsive/Media Queries), JavaScript ES6+, Vue.js</div>
-        <div class="skill-item"><strong>Backend</strong>PHP, MySQL — e-commerce en producción</div>
-        <div class="skill-item"><strong>Herramientas</strong>Git, GitHub, PHPMailer, API PayPal, WordPress</div>
-        <div class="skill-item"><strong>SEO & Analytics</strong>Search Console, Google Analytics, Sitemap XML, meta tags</div>
-        <div class="skill-item"><strong>Seguridad</strong>HTTPS/SSL, .htaccess, .env, validación de formularios</div>
-        <div class="skill-item"><strong>Despliegue</strong>Hostinger, configuración de servidor, dominio y DNS</div>
+        <div class="skill-item">
+          <strong>Frontend</strong>
+          <span>HTML5, CSS3 (Responsive / Media Queries), JavaScript ES6+, Vue.js</span>
+        </div>
+        <div class="skill-item">
+          <strong>Backend</strong>
+          <span>PHP, MySQL — e-commerce en producción</span>
+        </div>
+        <div class="skill-item">
+          <strong>Herramientas</strong>
+          <span>Git, GitHub, PHPMailer, API PayPal, WordPress</span>
+        </div>
+        <div class="skill-item">
+          <strong>SEO &amp; Analytics</strong>
+          <span>Search Console, Google Analytics, Sitemap XML, meta tags</span>
+        </div>
+        <div class="skill-item">
+          <strong>Seguridad</strong>
+          <span>HTTPS/SSL, .htaccess, .env, validación de formularios</span>
+        </div>
+        <div class="skill-item">
+          <strong>Despliegue</strong>
+          <span>Hostinger, configuración de servidor, dominio y DNS</span>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2><i class="fas fa-graduation-cap"></i> Formación</h2>
-      <div class="card">
+    <section class="section" id="formacion">
+      <h2><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Formación</h2>
+      <article class="card">
         <h3>Front End Web Developer (IFCD65) — Nivel 4 <em>(en curso)</em></h3>
         <p class="hint">2026 – Jul. 2026 · Pime Coneixement · Consorci per a la Formació Contínua de Catalunya</p>
         <p>JavaScript ES6+, Vue.js, Git/GitHub — 240 horas de especialización frontend avanzado</p>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <h3>Confección y Publicación de Páginas Web (IFCD0110) — Certificado Oficial</h3>
         <p class="hint">Mayo – Dic. 2025 · 560 horas · SOC – Generalitat de Catalunya</p>
         <p><strong>Calificación: Excelente en todos los módulos</strong></p>
-      </div>
-    </div>
+      </article>
+    </section>
 
-    <div class="section">
-      <h2><i class="fas fa-address-card"></i> Contacto</h2>
+    <section class="section" id="contacto">
+      <h2><i class="fa-solid fa-address-card" aria-hidden="true"></i> Contacto</h2>
       <ul class="contact-list">
-        <li><i class="fas fa-envelope"></i> juancasano83@gmail.com</li>
-        <li><i class="fas fa-phone"></i> 663 658 421</li>
-        <li><i class="fab fa-github"></i> <a href="https://github.com/juancasano" target="_blank">github.com/juancasano</a></li>
-        <li><i class="fas fa-location-dot"></i> Barcelona, España</li>
+        <li>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:juancasano83@gmail.com">juancasano83@gmail.com</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <a href="tel:+34663658421">663 658 421</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <a href="https://github.com/juancasano" target="_blank" rel="noopener">github.com/juancasano</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          Barcelona, España
+        </li>
       </ul>
-    </div>
+    </section>
 
-  </div>
+  </main>
 
-  <footer>
-    <p>Proyecto en producción: <a href="https://camiglobo.com" target="_blank">camiglobo.com</a> · GitHub disponible bajo solicitud</p>
+  <footer class="site-footer">
+    <p>Proyecto en producción: <a href="https://camiglobo.com" target="_blank" rel="noopener">camiglobo.com</a></p>
   </footer>
 
 </body>
