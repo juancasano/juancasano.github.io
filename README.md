@@ -10,11 +10,9 @@ Proyecto real en producción: [camiglobo.com](https://camiglobo.com)
 
 | Archivo | Descripción |
 |---|---|
-| `portafolio.html` | Portafolio web (página principal) |
-| `curri.html` | Currículum web con vista de impresión optimizada |
-| `Currículum Juan Manuel Casanova.pdf` | CV en PDF (generado desde `curri.html`) |
-
-> **GitHub Pages:** si activas GitHub Pages en este repo, `portafolio.html` se sirve como página principal. Renómbralo a `index.html` para que funcione directamente en la raíz.
+| `index.html` | Portafolio web (página principal) |
+| `cv.html` | Currículum web con vista de impresión optimizada |
+| `juan-manuel-casanova.pdf` | CV en PDF (generado desde `cv.html`) |
 
 ---
 
