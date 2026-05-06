@@ -4,130 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portafolio - Juan Manuel Casanova</title>
+  <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    :root {
-      --primary: #0f172a;
-      --secondary: #38bdf8;
-      --accent: #f43f5e;
-      --bg: #f1f5f9;
-      --card: #ffffff;
-      --text: #1e293b;
-      --text-light: #64748b;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 80px 20px 60px;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; font-weight: 300; margin-bottom: 6px; }
-    header .contact-bar { font-size: 0.95rem; opacity: 0.85; margin-top: 12px; }
-    header .contact-bar a { color: white; text-decoration: underline; }
-
-    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-
-    .section {
-      background: var(--card);
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      animation: slideUp 0.6s ease-in-out;
-    }
-
-    .section h2 {
-      color: var(--secondary);
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--secondary);
-      padding-bottom: 10px;
-    }
-
-    .section h3 {
-      font-size: 1.1rem;
-      margin: 15px 0 5px;
-      color: var(--primary);
-    }
-
-    .hint {
-      color: var(--text-light);
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .project-card {
-      background-color: #e0f2fe;
-      border-left: 5px solid var(--secondary);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover { transform: translateY(-5px); }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .skill-item {
-      background: #f0f9ff;
-      border-left: 3px solid var(--secondary);
-      padding: 10px 14px;
-      border-radius: 6px;
-    }
-
-    .skill-item strong { color: var(--primary); display: block; margin-bottom: 2px; }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      background-color: var(--secondary);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover { background-color: var(--accent); }
-
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .section { padding: 20px; }
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
-<body>
+<body class="pf-body">
 
   <header>
     <h1><i class="fas fa-code"></i> Juan Manuel Casanova Lacasa</h1>
@@ -140,19 +20,19 @@
     </div>
   </header>
 
-  <div class="container">
+  <div class="pf-container">
 
-    <div class="section">
+    <div class="pf-section">
       <h2><i class="fas fa-user"></i> Perfil profesional</h2>
       <p>Desarrollador web con formación técnica oficial (SOC/SEPE) y proyecto real en producción: e-commerce con más de 100 productos activos desplegado en Hostinger con pasarela de pago PayPal, diseño responsive, SEO implementado y panel de administración propio. Certificado en Confección y Publicación de Páginas Web (IFCD0110, 560h con prácticas) y actualmente cursando Front End Web Developer Nivel 4 (IFCD65). Más de 20 años de vida laboral activa aportando responsabilidad y autonomía. Busco incorporarme a un equipo técnico donde seguir creciendo como desarrollador.</p>
       <a href="curri.html" class="btn" style="margin-top:15px;"><i class="fas fa-file-alt"></i> Ver currículum completo</a>
     </div>
 
-    <div class="section">
+    <div class="pf-section">
       <h2><i class="fas fa-star"></i> Proyecto destacado</h2>
-      <div class="project-card">
+      <div class="pf-card">
         <h3><i class="fas fa-tshirt"></i> Camiglobo Barcelona — E-commerce de Camisetas Personalizadas</h3>
-        <p class="hint">2025 – Actualidad · <a href="https://camiglobo.com" target="_blank">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
+        <p class="pf-hint">2025 – Actualidad · <a href="https://camiglobo.com" target="_blank">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
         <ul>
           <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries</li>
           <li>E-commerce con más de 100 productos activos en producción</li>
@@ -167,7 +47,7 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="pf-section">
       <h2><i class="fas fa-tools"></i> Habilidades técnicas</h2>
       <div class="skills-grid">
         <div class="skill-item"><strong>Frontend</strong>HTML5, CSS3 (Responsive/Media Queries), JavaScript ES6+, Vue.js</div>
@@ -179,28 +59,28 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="pf-section">
       <h2><i class="fas fa-graduation-cap"></i> Formación</h2>
-      <div class="project-card">
+      <div class="pf-card">
         <h3>Front End Web Developer (IFCD65) — Nivel 4 <em>(en curso)</em></h3>
-        <p class="hint">2026 – Jul. 2026 · Pime Coneixement · Consorci per a la Formació Contínua de Catalunya</p>
+        <p class="pf-hint">2026 – Jul. 2026 · Pime Coneixement · Consorci per a la Formació Contínua de Catalunya</p>
         <p>JavaScript ES6+, Vue.js, Git/GitHub — 240 horas de especialización frontend avanzado</p>
       </div>
-      <div class="project-card">
+      <div class="pf-card">
         <h3>Confección y Publicación de Páginas Web (IFCD0110) — Certificado Oficial</h3>
-        <p class="hint">Mayo – Dic. 2025 · 560 horas · Qualitat i Desenvolupupament Consultors, SL · SOC – Generalitat de Catalunya</p>
+        <p class="pf-hint">Mayo – Dic. 2025 · 560 horas · Qualitat i Desenvolupupament Consultors, SL · SOC – Generalitat de Catalunya</p>
         <p><strong>Calificación: Excelente en todos los módulos</strong></p>
       </div>
     </div>
 
-    <div class="section">
+    <div class="pf-section">
       <h2><i class="fas fa-address-card"></i> Contacto</h2>
-      <ul style="list-style:none; padding:0;">
-        <li style="margin-bottom:8px;"><i class="fas fa-envelope" style="color:var(--secondary); width:20px;"></i> juancasano83@gmail.com</li>
-        <li style="margin-bottom:8px;"><i class="fas fa-phone" style="color:var(--secondary); width:20px;"></i> 663 658 421</li>
-        <li style="margin-bottom:8px;"><i class="fas fa-globe" style="color:var(--secondary); width:20px;"></i> <a href="https://camiglobo.com" target="_blank">camiglobo.com</a></li>
-        <li style="margin-bottom:8px;"><i class="fab fa-github" style="color:var(--secondary); width:20px;"></i> <a href="https://github.com/juancasano" target="_blank">github.com/juancasano</a></li>
-        <li><i class="fas fa-location-dot" style="color:var(--secondary); width:20px;"></i> Barcelona, España</li>
+      <ul class="bulletless">
+        <li><i class="fas fa-envelope"></i> juancasano83@gmail.com</li>
+        <li><i class="fas fa-phone"></i> 663 658 421</li>
+        <li><i class="fas fa-globe"></i> <a href="https://camiglobo.com" target="_blank">camiglobo.com</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/juancasano" target="_blank">github.com/juancasano</a></li>
+        <li><i class="fas fa-location-dot"></i> Barcelona, España</li>
       </ul>
     </div>
 
