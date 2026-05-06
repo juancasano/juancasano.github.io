@@ -12,7 +12,7 @@ Proyecto real en producción: [camiglobo.com](https://camiglobo.com)
 |---|---|
 | `index.html` | Portafolio web (página principal) |
 | `cv.html` | Currículum web con vista de impresión optimizada |
-| `juan-manuel-casanova.pdf` | CV en PDF (generado desde `cv.html`) |
+| `cv-juan-manuel-casanova.pdf` | CV en PDF (generado desde `cv.html`) |
 
 ---
 
