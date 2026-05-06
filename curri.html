@@ -178,7 +178,7 @@
 
         @media print {
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            body { font-size: 10.5px; line-height: 1.4; background: white; }
+            body { font-size: 9.5px; line-height: 1.32; background: white; }
 
             .cv-container {
                 display: block;
@@ -193,15 +193,15 @@
             .main-content { width: 100%; padding: 0; }
 
             .main-header {
-                padding: 14px 28px 14px 110px;
-                margin: 0 0 12px;
+                padding: 10px 24px 10px 100px;
+                margin: 0 0 8px;
                 border-radius: 0;
                 position: relative;
                 text-align: left;
-                min-height: 95px;
+                min-height: 78px;
             }
-            .main-header h1 { font-size: 20px; margin-bottom: 3px; }
-            .main-header .subtitle { font-size: 12px; margin: 0 0 6px; }
+            .main-header h1 { font-size: 18px; margin-bottom: 2px; }
+            .main-header .subtitle { font-size: 11px; margin: 0 0 4px; }
 
             .print-photo {
                 display: block;
@@ -252,9 +252,13 @@
             .hint { font-size: 9.5px; margin: 2px 0 4px; }
             ul.bullets { padding-left: 16px; }
             ul.bullets li { margin-bottom: 2px; font-size: 10px; }
-            .section { margin-bottom: 10px; }
-            .experience, .education { margin-bottom: 8px; }
+            .section { margin-bottom: 10px; page-break-inside: avoid; break-inside: avoid; }
+            .experience, .education { margin-bottom: 8px; page-break-inside: avoid; break-inside: avoid; }
+            .section-title { page-break-after: avoid; break-after: avoid; }
+            .item-title { page-break-after: avoid; break-after: avoid; }
             .footer-note { display: none; }
+
+            @page { size: A4; margin: 10mm 0; }
         }
     </style>
 </head>
@@ -273,7 +277,7 @@
                 <ul class="bulletless">
                     <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>juancasano83@gmail.com</span></li>
                     <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span>663 658 421</span></li>
-                    <li><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>linkedin.com/in/juan-casanova</span></li>
+                    <li><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>linkedin.com/in/juan-manuel-casanova-lacasa</span></li>
                     <li><i class="fa-brands fa-github" aria-hidden="true"></i><span>github.com/juancasano</span></li>
                     <li><i class="fa-solid fa-globe" aria-hidden="true"></i><span>juancasano.github.io</span></li>
                     <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Barcelona, España</span></li>
@@ -298,7 +302,7 @@
                 <hr>
                 <ul class="bulletless">
                     <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Castellano (Nativo)</span></li>
-                    <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Catalán (Comprensión y comunicación fluida)</span></li>
+                    <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Catalán (Bilingüe)</span></li>
                     <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Inglés (Nivel básico — lectura técnica)</span></li>
                 </ul>
             </section>
@@ -312,7 +316,7 @@
                 <p class="print-contact">
                     <i class="fa-solid fa-envelope" aria-hidden="true"></i> juancasano83@gmail.com &nbsp;·&nbsp;
                     <i class="fa-solid fa-phone" aria-hidden="true"></i> 663 658 421 &nbsp;·&nbsp;
-                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin.com/in/juan-casanova &nbsp;·&nbsp;
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin.com/in/juan-manuel-casanova-lacasa &nbsp;·&nbsp;
                     <i class="fa-brands fa-github" aria-hidden="true"></i> github.com/juancasano &nbsp;·&nbsp;
                     <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Barcelona
                 </p>
@@ -325,7 +329,7 @@
                     <ul>
                         <li><strong>Frontend:</strong> HTML5, CSS3, JS ES6+, Vue.js</li>
                         <li><strong>Backend:</strong> PHP, MySQL</li>
-                        <li><strong>Herramientas:</strong> Git, GitHub, PHPMailer, API PayPal</li>
+                        <li><strong>Herramientas:</strong> Git, GitHub, PHPMailer, API PayPal, WordPress</li>
                         <li><strong>SEO:</strong> Search Console, Analytics, Sitemap XML</li>
                         <li><strong>Seguridad:</strong> HTTPS/SSL, .htaccess, .env</li>
                     </ul>
@@ -334,7 +338,7 @@
                     <h3>Idiomas</h3>
                     <ul>
                         <li>Castellano (Nativo)</li>
-                        <li>Catalán (Fluido)</li>
+                        <li>Catalán (Bilingüe)</li>
                         <li>Inglés (Básico — lectura técnica)</li>
                     </ul>
                 </div>
@@ -361,14 +365,56 @@
                         <h3 class="item-title">Camiglobo Barcelona — E-commerce de Camisetas Personalizadas</h3>
                         <p class="hint">2025 – Actualidad &nbsp;|&nbsp; <a href="https://camiglobo.com" target="_blank" rel="noopener">camiglobo.com</a> · Proyecto real en producción · Hostinger</p>
                         <ul class="bullets">
-                            <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries — compatible con todos los dispositivos</li>
                             <li>E-commerce con más de 100 productos activos, desplegado en producción en camiglobo.com (Barcelona)</li>
                             <li>Desarrollado en PHP, JavaScript ES6, HTML5 y CSS3 con base de datos MySQL</li>
-                            <li>Pasarela de pago PayPal, emails transaccionales con PHPMailer/SMTP y panel de administración propio</li>
                             <li>Personalizador online interactivo: subida de imágenes, texto personalizado y previsualización en tiempo real</li>
+                            <li>Pasarela de pago PayPal, emails transaccionales con PHPMailer/SMTP y newsletter con envío masivo</li>
+                            <li>Sistema de usuarios completo: registro, login (incluyendo Google OAuth), recuperación de contraseña y gestión de perfil</li>
+                            <li>Panel de administración propio con gestión de productos, pedidos, clientes y biblioteca de recursos</li>
                             <li>SEO técnico: Sitemap XML, meta tags, robots.txt, Google Search Console y Google Analytics</li>
                             <li>Seguridad: HTTPS/SSL, variables de entorno (.env), protección .htaccess y validación de formularios</li>
-                            <li>Control de versiones con Git y despliegue en servidor de producción</li>
+                            <li>Diseño responsive (mobile, tablet y escritorio) con CSS3 y media queries</li>
+                            <li>Control de versiones con Git/GitHub y despliegue en servidor de producción (Hostinger)</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Experiencia laboral</h2>
+                    <hr class="section-divider">
+
+                    <article class="experience">
+                        <h3 class="item-title">Desarrollador Web Full Stack</h3>
+                        <p class="item-subtitle">Camiglobo Barcelona · Por cuenta propia · Remoto, Barcelona</p>
+                        <p class="hint">Sept. 2025 – Actualidad</p>
+                        <ul class="bullets">
+                            <li>Desarrollo end-to-end del e-commerce <a href="https://camiglobo.com" target="_blank" rel="noopener">camiglobo.com</a> (detalle técnico en sección «Proyectos destacados»)</li>
+                            <li>Stack: PHP, MySQL, JavaScript ES6, HTML5, CSS3, Git, GitHub</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience">
+                        <h3 class="item-title">Logística y reparto</h3>
+                        <p class="item-subtitle">Sector reparto y logística — varias empresas · Barcelona</p>
+                        <p class="hint">Ene. 2017 – Ago. 2022 · 5 años 8 meses</p>
+                        <ul class="bullets">
+                            <li>Reparto y gestión de pedidos en Deliveroo, Uber Eats, Just Eat, Glovo y Telepizza</li>
+                            <li>Gestión logística y preparación de pedidos en almacén (Amazon)</li>
+                            <li>Atención al cliente y soporte en bricolaje (Bricomart)</li>
+                            <li>Trabajo bajo presión, gestión de tiempos y trato directo con cliente</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience">
+                        <h3 class="item-title">Encargado / Dependiente especializado en ferretería</h3>
+                        <p class="item-subtitle">Sector ferretería industrial — múltiples establecimientos · Barcelona</p>
+                        <p class="hint">Sept. 2000 – Ago. 2017 · 17 años</p>
+                        <ul class="bullets">
+                            <li>Ferretería industrial en Badalona, Ferretería Güri (negocio familiar) y Ferretería Platinum (Cataluña Jocs, S.L.)</li>
+                            <li>Asesoramiento técnico a clientes profesionales (industria, construcción, mantenimiento)</li>
+                            <li>Gestión de pedidos, stock, aprovisionamiento y coordinación con proveedores</li>
+                            <li>En paralelo, oficios técnicos: albañilería, instalaciones eléctricas, fontanería y pintura</li>
+                            <li>Habilidades transversales aplicadas hoy al desarrollo: responsabilidad, autonomía y resolución de problemas con criterio práctico</li>
                         </ul>
                     </article>
                 </section>
@@ -379,7 +425,7 @@
                     <article class="education">
                         <h3 class="item-title">Front End Web Developer (IFCD65) — Nivel 4 <em>(en curso)</em></h3>
                         <p class="item-subtitle">Pime Coneixement · Consorci per a la Formació Contínua de Catalunya</p>
-                        <p class="hint">2026 – Jul. 2026</p>
+                        <p class="hint">Mar. 2026 – Jul. 2026</p>
                         <ul class="bullets"><li>JavaScript ES6+, Vue.js, Git/GitHub — 240 horas de especialización frontend avanzado</li></ul>
                     </article>
                     <article class="education">
@@ -388,17 +434,6 @@
                         <p class="hint">Mayo – Dic. 2025 · 560 horas · <strong>Calificación: Excelente en todos los módulos</strong></p>
                         <ul class="bullets"><li>MF0950_2: Construcció de pàgines web (210h) · MF0951_2: Integració de components (180h) · MF0952_2: Publicació (90h) · Pràctiques (80h)</li></ul>
                     </article>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">Trayectoria previa</h2>
-                    <hr class="section-divider">
-                    <p>Más de 20 años de actividad profesional en sectores de servicios, logística, comercio y actividad autónoma. Habilidades transversales aplicables al desarrollo web:</p>
-                    <ul class="bullets" style="margin-top: 6px;">
-                        <li><strong>Autonomía y autogestión</strong> — capacidad de organizar mi propio trabajo y cumplir plazos sin supervisión constante</li>
-                        <li><strong>Trato con cliente</strong> — comunicación clara para entender necesidades y traducirlas a entregables</li>
-                        <li><strong>Resolución de problemas</strong> — experiencia adaptándome a contextos cambiantes y aprendiendo nuevas herramientas</li>
-                    </ul>
                 </section>
             </div>
         </div>
