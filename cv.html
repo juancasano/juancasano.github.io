@@ -191,71 +191,76 @@
 
         @media print {
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            html, body { font-size: 9px; line-height: 1.32; background: white; margin: 0; padding: 0; }
+            html, body { font-size: 8.5px; line-height: 1.28; background: white; margin: 0; padding: 0; height: auto; }
 
-            /* Sidebar fijo que se repite en cada página del PDF */
+            /* Layout flex en una sola página A4 (sin sidebar fixed que se repite) */
             .cv-container {
-                display: block;
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
                 margin: 0;
                 box-shadow: none;
                 border-radius: 0;
-                overflow: visible;
+                overflow: hidden;
                 max-width: 100%;
+                min-height: 297mm;
+                max-height: 297mm;
             }
 
             .sidebar {
-                position: fixed;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 33%;
-                padding: 16px 14px;
+                position: relative;
+                left: auto;
+                top: auto;
+                bottom: auto;
+                width: 32%;
+                flex: 0 0 32%;
+                padding: 12px 11px;
                 background: var(--primary);
             }
 
             .main-content {
-                width: 67%;
-                margin-left: 33%;
-                padding: 16px 18px 16px 18px;
+                width: 68%;
+                flex: 1 1 68%;
+                margin-left: 0;
+                padding: 10px 14px 10px 14px;
             }
 
-            /* Sidebar interno compacto */
-            .profile { margin-bottom: 14px; }
-            .profile-photo { width: 95px; height: 95px; border-width: 3px; margin-bottom: 8px; }
-            .profile-name { font-size: 14px; }
-            .profile-role { font-size: 10px; margin-top: 3px; }
+            /* Sidebar compacto */
+            .profile { margin-bottom: 10px; }
+            .profile-photo { width: 78px; height: 78px; border-width: 2px; margin-bottom: 6px; }
+            .profile-name { font-size: 12px; }
+            .profile-role { font-size: 9px; margin-top: 2px; }
 
-            .sidebar-section { margin-bottom: 14px; }
-            .sidebar-title { font-size: 10px; margin-bottom: 5px; }
-            .sidebar hr { margin: 0 0 7px; }
-            .bulletless li { margin-bottom: 5px; font-size: 9px; line-height: 1.32; }
-            .bulletless i { margin-right: 6px; width: 13px; font-size: 9px; }
+            .sidebar-section { margin-bottom: 10px; }
+            .sidebar-title { font-size: 9px; margin-bottom: 3px; }
+            .sidebar hr { margin: 0 0 5px; }
+            .bulletless li { margin-bottom: 3px; font-size: 8px; line-height: 1.25; }
+            .bulletless i { margin-right: 5px; width: 11px; font-size: 8px; }
 
             /* Main content */
             .main-header {
-                padding: 14px 20px;
-                margin: 0 0 14px;
-                border-radius: 8px;
+                padding: 10px 14px;
+                margin: 0 0 8px;
+                border-radius: 6px;
                 background: var(--primary);
             }
-            .main-header h1 { font-size: 17px; margin-bottom: 2px; }
-            .main-header .subtitle { font-size: 10.5px; margin: 0; color: #cbd5e1; }
+            .main-header h1 { font-size: 15px; margin-bottom: 1px; }
+            .main-header .subtitle { font-size: 9.5px; margin: 0; color: #cbd5e1; }
 
-            /* Ocultar elementos solo-PDF antiguos: ya no los necesitamos */
             .print-photo { display: none; }
             .print-contact { display: none; }
             .print-summary { display: none !important; }
 
             .content-wrapper { padding: 0; }
-            .section { margin-bottom: 9px; page-break-inside: avoid; break-inside: avoid; }
-            .section-title { font-size: 11px; margin: 8px 0 3px; page-break-after: avoid; break-after: avoid; }
-            .section-divider { margin: 0 0 5px; height: 2px; }
-            .item-title { font-size: 10.5px; page-break-after: avoid; break-after: avoid; }
-            .item-subtitle { font-size: 9px; }
-            .hint { font-size: 8.5px; margin: 1px 0 3px; }
-            ul.bullets { padding-left: 14px; }
-            ul.bullets li { margin-bottom: 1.5px; font-size: 9px; }
-            .experience, .education { margin-bottom: 6px; page-break-inside: avoid; break-inside: avoid; }
+            .section { margin-bottom: 6px; page-break-inside: auto; break-inside: auto; }
+            .section-title { font-size: 10px; margin: 5px 0 2px; page-break-after: avoid; break-after: avoid; }
+            .section-divider { margin: 0 0 3px; height: 1.5px; }
+            .item-title { font-size: 9.5px; page-break-after: avoid; break-after: avoid; }
+            .item-subtitle { font-size: 8px; }
+            .hint { font-size: 7.5px; margin: 0 0 2px; }
+            ul.bullets { padding-left: 12px; }
+            ul.bullets li { margin-bottom: 1px; font-size: 8px; }
+            .experience, .education { margin-bottom: 4px; page-break-inside: avoid; break-inside: avoid; }
             .footer-note { display: none; }
 
             @page { size: A4; margin: 0; }
