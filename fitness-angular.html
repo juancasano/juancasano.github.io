@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Manager — App Angular | Juan Manuel Casanova</title>
+  <meta name="description" content="App Angular/TypeScript de rutinas y ejercicios: evolución didáctica v1–v9, CRUD, favoritos, reto diario y plan semanal." />
+
+  <!-- Open Graph / LinkedIn preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://juancasano.github.io/fitness-angular.html" />
+  <meta property="og:title" content="Fitness Manager — App Angular (v1→v9)" />
+  <meta property="og:description" content="App Angular/TypeScript de rutinas: evolución didáctica v1–v9, CRUD, favoritos y plan semanal." />
+  <meta property="og:image" content="https://juancasano.github.io/assets/fitness-angular-home.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="800" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fitness Manager — App Angular (v1→v9)" />
+  <meta name="twitter:description" content="App Angular/TypeScript de rutinas: evolución didáctica v1–v9, CRUD, favoritos y plan semanal." />
+  <meta name="twitter:image" content="https://juancasano.github.io/assets/fitness-angular-home.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #0b1f14;
+      --card: #122a1c;
+      --text: #e8f5e9;
+      --muted: #a7c4b0;
+      --accent: #8bc34a;
+      --btn: #1b5e20;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(160deg, #07140e, #0f2a1a 50%, #0b1f14);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 48px; }
+    .eyebrow { color: var(--accent); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 10px; }
+    .lead { color: var(--muted); margin-bottom: 22px; max-width: 60ch; }
+    .shot {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(139, 195, 74, 0.35);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      display: block;
+      margin-bottom: 22px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 18px; border-radius: 10px; text-decoration: none; font-weight: 600;
+      background: var(--accent); color: #0b1f14;
+    }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1px solid rgba(232,245,233,0.35);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(139,195,74,0.2);
+      border-radius: 12px;
+      padding: 18px 20px;
+      color: var(--muted);
+    }
+    .card strong { color: var(--text); }
+    ul { margin: 10px 0 0 18px; }
+    a.back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al portafolio</a>
+    <p class="eyebrow">Proyecto Angular</p>
+    <h1>Fitness Manager</h1>
+    <p class="lead">
+      App de gestión de rutinas en <strong>Angular + TypeScript</strong>.
+      Evolución didáctica <strong>v1 → v9</strong> hasta la app final con CRUD, favoritos, reto diario y plan semanal.
+    </p>
+
+    <img class="shot" src="assets/fitness-angular-home.png" alt="Captura de Fitness Manager: mapa de progresión Angular v1 a v9" />
+
+    <div class="actions">
+      <a class="btn" href="https://github.com/juancasano/aplicacionfitness-angular" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github" aria-hidden="true"></i> Ver en GitHub
+      </a>
+      <a class="btn btn-outline" href="index.html#proyectos">
+        <i class="fa-solid fa-briefcase" aria-hidden="true"></i> Más proyectos
+      </a>
+    </div>
+
+    <section class="card">
+      <strong>Qué incluye</strong>
+      <ul>
+        <li>Progresión por versiones (v1–v9) como mapa de aprendizaje</li>
+        <li>App final: filtro, edición y borrado de rutinas</li>
+        <li>Favoritos, desafío diario y plan semanal</li>
+        <li>Supabase opcional o modo demo con datos locales</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
