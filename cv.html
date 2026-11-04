@@ -263,6 +263,11 @@
             .experience, .education { margin-bottom: 4px; page-break-inside: avoid; break-inside: avoid; }
             .footer-note { display: none; }
 
+            /* Enlaces visibles en el PDF: subrayados y con color, para que se note que son clicables */
+            a { text-decoration: underline !important; text-underline-offset: 1.5px; text-decoration-thickness: 0.6px; }
+            .sidebar a, .sidebar .contact-link { color: #7dd3fc !important; }
+            .main-content a { color: #0369a1 !important; }
+
             @page { size: A4; margin: 0; }
         }
     </style>
